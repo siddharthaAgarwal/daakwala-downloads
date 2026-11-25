@@ -1,0 +1,46 @@
+Daakwala — The cold-emailer
+
+Windows: Extract the complete ZIP, then double-click Daakwala.exe inside Daakwala.
+Keep the _internal directory beside the executable. Do not run inside the ZIP.
+macOS: Extract the ZIP, move Daakwala.app to Applications, and open it.
+Use the build matching your Mac: arm64 for Apple Silicon, x86_64 for Intel.
+
+Read and accept the personal-use license, then click Start Daakwala. Your default
+browser opens http://localhost:8000. Keep the launcher window open while using it.
+Close the launcher to stop the server; an in-flight send may still complete.
+Nothing sends automatically on startup. No Gmail credentials are included.
+
+Gmail setup:
+Create a Google Desktop OAuth client with Gmail API enabled and gmail.send scope.
+Use Import Gmail credentials in the launcher BEFORE starting the dashboard.
+Then connect your own account from dashboard Settings. Google OAuth testing-user
+restrictions still apply. Never share your token.json or credentials.json.
+Dashboard Settings also has Import OAuth JSON and the full step-by-step Gmail
+guide, including Google Cloud setup and troubleshooting. Reconnect / choose account
+opens fresh Google consent; Check connection reuses existing authorization.
+
+Contacts and resume:
+Start with an empty address book. Add/import your own contacts and upload a PDF
+resume. Create a template, dry run, review recipients, and explicitly confirm sends.
+The initial template is synthetic; replace it with your own accurate content.
+
+User data (separate from the installed app):
+Windows: %LOCALAPPDATA%\Daakwala
+macOS: ~/Library/Application Support/Daakwala
+Open data folder in the launcher shows these files. Back up the entire folder
+with the app stopped. Upgrading the executable does not replace your user data.
+Do not copy the previous author's personal files into a distributed release.
+
+Limits: up to 40 per batch, 30-300 second gaps, up to 100 successful sends per
+local day. These do not guarantee protection from restrictions or API charges.
+
+If startup fails, inspect desktop.log in the data folder. Port 8000 must be free.
+Known accepted sends are recovered; uncertain outcomes need manual Gmail checking.
+
+Development builds are not publisher-signed/notarized. Windows or macOS may block
+them. Do not disable OS security protections. Public distribution should use a
+signed Windows executable and an Apple Developer ID signed/notarized macOS app.
+
+Personal, noncommercial use only under the included LICENSE. Third-party components
+retain their own licenses. See THIRD_PARTY_NOTICES.txt. No Python or Node install
+is required on the recipient's machine.
